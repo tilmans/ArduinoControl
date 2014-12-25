@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		227809B91A4CA8130056C85B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227809B81A4CA8130056C85B /* main.swift */; };
+		227809CE1A4CAD7E0056C85B /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 227809C91A4CAD7E0056C85B /* ORSSerialPort.m */; };
+		227809CF1A4CAD7E0056C85B /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 227809CB1A4CAD7E0056C85B /* ORSSerialPortManager.m */; };
+		227809D01A4CAD7E0056C85B /* ORSSerialRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 227809CD1A4CAD7E0056C85B /* ORSSerialRequest.m */; };
+		227809D21A4CAEBD0056C85B /* PortManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227809D11A4CAEBD0056C85B /* PortManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,14 @@
 /* Begin PBXFileReference section */
 		227809B51A4CA8130056C85B /* ArduinoConnect */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ArduinoConnect; sourceTree = BUILT_PRODUCTS_DIR; };
 		227809B81A4CA8130056C85B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		227809C71A4CAC1A0056C85B /* ArduinoConnect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ArduinoConnect-Bridging-Header.h"; sourceTree = "<group>"; };
+		227809C81A4CAD7E0056C85B /* ORSSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSSerialPort.h; path = ../ORSSerialPort/Source/ORSSerialPort.h; sourceTree = "<group>"; };
+		227809C91A4CAD7E0056C85B /* ORSSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPort.m; path = ../ORSSerialPort/Source/ORSSerialPort.m; sourceTree = "<group>"; };
+		227809CA1A4CAD7E0056C85B /* ORSSerialPortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSSerialPortManager.h; path = ../ORSSerialPort/Source/ORSSerialPortManager.h; sourceTree = "<group>"; };
+		227809CB1A4CAD7E0056C85B /* ORSSerialPortManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPortManager.m; path = ../ORSSerialPort/Source/ORSSerialPortManager.m; sourceTree = "<group>"; };
+		227809CC1A4CAD7E0056C85B /* ORSSerialRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSSerialRequest.h; path = ../ORSSerialPort/Source/ORSSerialRequest.h; sourceTree = "<group>"; };
+		227809CD1A4CAD7E0056C85B /* ORSSerialRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSSerialRequest.m; path = ../ORSSerialPort/Source/ORSSerialRequest.m; sourceTree = "<group>"; };
+		227809D11A4CAEBD0056C85B /* PortManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +53,7 @@
 		227809AC1A4CA8130056C85B = {
 			isa = PBXGroup;
 			children = (
+				227809C71A4CAC1A0056C85B /* ArduinoConnect-Bridging-Header.h */,
 				227809B71A4CA8130056C85B /* ArduinoConnect */,
 				227809B61A4CA8130056C85B /* Products */,
 			);
@@ -57,7 +70,14 @@
 		227809B71A4CA8130056C85B /* ArduinoConnect */ = {
 			isa = PBXGroup;
 			children = (
+				227809C81A4CAD7E0056C85B /* ORSSerialPort.h */,
+				227809C91A4CAD7E0056C85B /* ORSSerialPort.m */,
+				227809CA1A4CAD7E0056C85B /* ORSSerialPortManager.h */,
+				227809CB1A4CAD7E0056C85B /* ORSSerialPortManager.m */,
+				227809CC1A4CAD7E0056C85B /* ORSSerialRequest.h */,
+				227809CD1A4CAD7E0056C85B /* ORSSerialRequest.m */,
 				227809B81A4CA8130056C85B /* main.swift */,
+				227809D11A4CAEBD0056C85B /* PortManager.swift */,
 			);
 			path = ArduinoConnect;
 			sourceTree = "<group>";
@@ -118,7 +138,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227809CF1A4CAD7E0056C85B /* ORSSerialPortManager.m in Sources */,
 				227809B91A4CA8130056C85B /* main.swift in Sources */,
+				227809D01A4CAD7E0056C85B /* ORSSerialRequest.m in Sources */,
+				227809CE1A4CAD7E0056C85B /* ORSSerialPort.m in Sources */,
+				227809D21A4CAEBD0056C85B /* PortManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +186,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "ArduinoConnect-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -197,6 +222,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "ArduinoConnect-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -233,6 +259,7 @@
 				227809BE1A4CA8130056C85B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
