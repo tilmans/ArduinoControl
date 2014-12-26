@@ -8,9 +8,6 @@
 
 import Foundation
 
-println("Hello, World!")
-
 let connect = PortManager()
 connect.openPort()
-
 CFRunLoopRun()
