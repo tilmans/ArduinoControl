@@ -45,11 +45,10 @@ class PortManager: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDele
         if let dataString = NSString(data:data, encoding:NSUTF8StringEncoding) {
             if (dataString.containsString("\n")) {
                 let index = dataString.rangeOfString("\n")
-                let front = dataString.substringToIndex(index.location)
-                let final = buffer + front.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                let final = buffer + dataString.substringToIndex(index.location)
+                let finalClean = final.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
                 buffer = dataString.substringFromIndex(index.location + 1)
-                println(final)
-                let components = final.componentsSeparatedByString(":")
+                let components = finalClean.componentsSeparatedByString(":")
                 if (components.count == 2) {
                     if (components[0] == "V") {
                         if let volume = components[1].toInt() {
@@ -88,8 +87,7 @@ class PortManager: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDele
             &defaultOutputDeviceIDSize,
             &defaultOutputDeviceID)
         
-        var volume = volume / 1023 // Float32(0.50) // 0.0 ... 1.0
-        println(NSString(format:"Set audio to %f",volume))
+        var volume = Float(volume) / 1023 // Float32(0.50) // 0.0 ... 1.0
         var volumeSize = UInt32(sizeofValue(volume))
         
         var volumePropertyAddress = AudioObjectPropertyAddress(
@@ -97,13 +95,12 @@ class PortManager: NSObject, ORSSerialPortDelegate, NSUserNotificationCenterDele
             mScope: AudioObjectPropertyScope(kAudioDevicePropertyScopeOutput),
             mElement: AudioObjectPropertyElement(kAudioObjectPropertyElementMaster))
         
-        /*
         let status2 = AudioHardwareServiceSetPropertyData(
             defaultOutputDeviceID,
             &volumePropertyAddress,
             0,
             nil,
             volumeSize,
-            &volume) */
+            &volume)
     }
 }
